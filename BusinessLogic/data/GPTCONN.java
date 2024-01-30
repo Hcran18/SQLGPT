@@ -1,3 +1,5 @@
+package BusinessLogic.data;
+
 public class GPTCONN {
     private String url;
     private String apiKey;
