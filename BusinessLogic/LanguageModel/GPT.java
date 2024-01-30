@@ -1,7 +1,7 @@
 package BusinessLogic.LanguageModel;
 
-import BusinessLogic.data.GPTCONN;
-import BusinessLogic.data.GPTINFO;
+import BusinessLogic.LanguageModel.languageModelData.GPTCONN;
+import BusinessLogic.LanguageModel.languageModelData.GPTINFO;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package BusinessLogic.data;
+package BusinessLogic.LanguageModel.languageModelData;
 
 public class GPTCONN {
     private String url;

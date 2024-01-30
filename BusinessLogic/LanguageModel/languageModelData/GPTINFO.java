@@ -1,4 +1,4 @@
-package BusinessLogic.data;
+package BusinessLogic.LanguageModel.languageModelData;
 
 public class GPTINFO {
     private String URL = "https://api.openai.com/v1/chat/completions";
