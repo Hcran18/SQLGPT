@@ -1,6 +1,6 @@
 public class GPTINFO {
     private String URL = "https://api.openai.com/v1/chat/completions";
-    private String apiKey = "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";
+    private String apiKey = null;
     private String model = "gpt-3.5-turbo";
 
     public String getURL() {
