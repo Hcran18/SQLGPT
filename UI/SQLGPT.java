@@ -1,3 +1,5 @@
+package UI;
+
 import BusinessLogic.LanguageModel.GPT;
 import BusinessLogic.LanguageModel.LanguageModelInterface;
 
