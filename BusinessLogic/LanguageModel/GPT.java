@@ -21,10 +21,13 @@ public class GPT implements LanguageModelInterface {
     @Override
     public String chat(String prompt) {
         try {
-            return returnResponseAsString(getResponse(prompt, gpt));
+            BufferedReader br = getResponse(prompt, gpt);
+            assert br != null;
+            return returnResponseAsString(br);
         }
         catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            return "Error Retrieving Response";
         }
     }
 
@@ -56,7 +59,15 @@ public class GPT implements LanguageModelInterface {
         writer.close();
 
         // Response from ChatGPT
-        return new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        int responseCode = connection.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            // Read the response content using connection.getInputStream()
+            return new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        } else {
+            // Handle the error, perhaps by reading the error stream using connection.getErrorStream()
+            System.err.println("Error: " + responseCode + " - " + connection.getResponseMessage());
+            return null;
+        }
     }
 
     private String extractMessageFromJSONResponse(String response) {

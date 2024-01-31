@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c310aca-6b65-41d7-a5fd-f8cffafaa2a7" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/GPTCONN.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SQLGPT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SQLGPT/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SQLGPT/.idea/SQLGPT.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SQLGPT/.idea/aws.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SQLGPT/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SQLGPT/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SQLGPT/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SQLGPT/GPTCONNECTION.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SQLGPT/SQLGPT.class" beforeDir="false" />
+    <list default="true" id="5c310aca-6b65-41d7-a5fd-f8cffafaa2a7" name="Changes" comment="Revoke API">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/DataAccess/Database/DAO/DataAccessObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/DataAccess/Database/DataAccessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/DataAccess/Database/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/DataAccess/Database/Service/DataAccessService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gpt.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SQLGPT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SQLGPT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/LanguageModel/GPT.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/LanguageModel/GPT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/LanguageModel/languageModelData/GPTINFO.java" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/LanguageModel/languageModelData/GPTINFO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/SQLGPT.java" beforeDir="false" afterPath="$PROJECT_DIR$/UI/SQLGPT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -31,6 +32,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Hcran18"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="76760e3c-d8ce-46d9-b04a-31521b09cbb5" />
+        <option name="url" value="https://github.com/Hcran18/SQLGPT.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -40,20 +56,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.SQLGPT.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/hunte/OneDrive/Documents/6. Database Modeling/SQLGPT&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.SQLGPT.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/hunte/OneDrive/Documents/6. Database Modeling/SQLGPT",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="BusinessLogic.DataAccess" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,7 +97,71 @@
       <option name="project" value="LOCAL" />
       <updated>1706585967036</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Started Working in Java">
+      <option name="closed" value="true" />
+      <created>1706643909671</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706643909671</updated>
+    </task>
+    <task id="LOCAL-00003" summary="API KEY Revoked">
+      <option name="closed" value="true" />
+      <created>1706644501428</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706644501428</updated>
+    </task>
+    <task id="LOCAL-00004" summary="GPT CONN Cleanup">
+      <option name="closed" value="true" />
+      <created>1706644788178</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706644788178</updated>
+    </task>
+    <task id="LOCAL-00005" summary="SQLGPT Clean up">
+      <option name="closed" value="true" />
+      <created>1706645986532</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706645986532</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Language Model Layering and Dependency Inversion">
+      <option name="closed" value="true" />
+      <created>1706652536084</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706652536084</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Language Model Layering and Dependency Inversion">
+      <option name="closed" value="true" />
+      <created>1706652646932</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706652646932</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Language Model Layering and Dependency Inversion">
+      <option name="closed" value="true" />
+      <created>1706652709204</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1706652709204</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Revoke API">
+      <option name="closed" value="true" />
+      <created>1706652840693</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1706652840693</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,6 +177,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Started Working in Java" />
+    <MESSAGE value="API KEY Revoked" />
+    <MESSAGE value="GPT CONN Cleanup" />
+    <MESSAGE value="SQLGPT Clean up" />
+    <MESSAGE value="Language Model Layering and Dependency Inversion" />
+    <MESSAGE value="Revoke API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revoke API" />
   </component>
 </project>
