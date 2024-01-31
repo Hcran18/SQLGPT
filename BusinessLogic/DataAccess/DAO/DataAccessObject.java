@@ -1,4 +1,4 @@
-package BusinessLogic.DataAccess.Database.DAO;
+package BusinessLogic.DataAccess.DAO;
 
 import BusinessLogic.DataAccess.Database.DataAccessException;
 
@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.StringJoiner;
 
-public class DataAccessObject {
+public class DataAccessObject implements DAOInterface {
     public String retrieve(Connection connection, String sql) throws DataAccessException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;

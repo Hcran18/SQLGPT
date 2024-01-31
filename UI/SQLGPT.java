@@ -1,15 +1,14 @@
 package UI;
 
-import BusinessLogic.DataAccess.Database.Service.DataAccessService;
+import BusinessLogic.DataAccess.Service.DASInterface;
+import BusinessLogic.DataAccess.Service.DataAccessService;
 import BusinessLogic.LanguageModel.GPT;
 import BusinessLogic.LanguageModel.LanguageModelInterface;
-
-import java.sql.PreparedStatement;
 
 public class SQLGPT {
     public static void main(String[] args) {
         LanguageModelInterface languageModel = new GPT();
-        DataAccessService service = new DataAccessService();
+        DASInterface service = new DataAccessService();
 
         //TODO: Create SQL prompt from tables and question and give to chat gpt to receive SQL statement
         //TODO: Take gpt.sql and give it to chat as a prompt
