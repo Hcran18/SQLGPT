@@ -10,6 +10,7 @@ public class SQLDatabase implements DatabaseInterface {
     public Connection openConnection() throws DataAccessException {
         try {
             //TODO: Add Password
+            // This is a Database running on my current machine
             conn = DriverManager.getConnection("jdbc:mysql://localhost/gpt?user=root&password=");
 
             conn.setAutoCommit(false);
