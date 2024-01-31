@@ -10,7 +10,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class GPT implements LanguageModelInterface {
+public class ChatGPT implements LanguageModelInterface {
     private static final GPTINFO gptinfo = new GPTINFO();
     private static final GPTCONN gpt = new GPTCONN(
             gptinfo.getURL(),
