@@ -1,10 +1,10 @@
 package BusinessLogic.DataAccess.Service;
 
 import BusinessLogic.DataAccess.DAO.DAOInterface;
-import BusinessLogic.DataAccess.DAO.SQLDAO;
 import BusinessLogic.DataAccess.Database.DataAccessException;
 import BusinessLogic.DataAccess.Database.DatabaseInterface;
 import BusinessLogic.DataAccess.Database.SQLDatabase;
+import BusinessLogic.DataAccess.DAO.SQLDAO;
 
 import java.sql.Connection;
 
