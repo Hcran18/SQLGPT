@@ -1,17 +1,17 @@
 package BusinessLogic.DataAccess.Service;
 
 import BusinessLogic.DataAccess.DAO.DAOInterface;
-import BusinessLogic.DataAccess.DAO.DataAccessObject;
+import BusinessLogic.DataAccess.DAO.SQLDAO;
 import BusinessLogic.DataAccess.Database.DataAccessException;
-import BusinessLogic.DataAccess.Database.Database;
 import BusinessLogic.DataAccess.Database.DatabaseInterface;
+import BusinessLogic.DataAccess.Database.SQLDatabase;
 
 import java.sql.Connection;
 
 public class DataAccessService implements DASInterface {
     public String retrieveData (String sql) {
-        DatabaseInterface db = new Database();
-        DAOInterface DAO = new DataAccessObject();
+        DatabaseInterface db = new SQLDatabase();
+        DAOInterface DAO = new SQLDAO();
         Connection connection = null;
 
         try {

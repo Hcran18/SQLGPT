@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.StringJoiner;
 
-public class DataAccessObject implements DAOInterface {
+public class SQLDAO implements DAOInterface {
     public String retrieve(Connection connection, String sql) throws DataAccessException {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;

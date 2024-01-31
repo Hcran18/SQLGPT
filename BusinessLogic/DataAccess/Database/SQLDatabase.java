@@ -4,18 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Database implements DatabaseInterface {
-    /**
-     * The connection object representing the database connection.
-     */
+public class SQLDatabase implements DatabaseInterface {
     private Connection conn;
 
-    /**
-     * Opens a connection to the database.
-     *
-     * @return the opened database connection
-     * @throws DataAccessException if unable to open the connection
-     */
     public Connection openConnection() throws DataAccessException {
         try {
             //TODO: Add Password
@@ -30,12 +21,6 @@ public class Database implements DatabaseInterface {
         return conn;
     }
 
-    /**
-     * Gets the current database connection. If the connection is not open, it opens a new connection.
-     *
-     * @return the current database connection
-     * @throws DataAccessException if unable to open the connection
-     */
     public Connection getConnection() throws DataAccessException {
         if (conn == null) {
             return openConnection();
@@ -44,11 +29,6 @@ public class Database implements DatabaseInterface {
         }
     }
 
-    /**
-     * Closes the database connection.
-     *
-     * @param commit true to commit the changes, false to rollback the changes
-     */
     public void closeConnection(boolean commit) {
         try {
             if (commit) {
