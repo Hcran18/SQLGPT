@@ -15,8 +15,8 @@ CREATE TABLE LibraryBook (
     book_id INT,
     copies_available INT,
     PRIMARY KEY (library_id, book_id),
-    FOREIGN KEY (library_id) REFERENCES Libraries(library_id),
-    FOREIGN KEY (book_id) REFERENCES Books(book_id)
+    FOREIGN KEY (library_id) REFERENCES Library(library_id),
+    FOREIGN KEY (book_id) REFERENCES Book(book_id)
 );
 
 CREATE TABLE People (
@@ -32,5 +32,5 @@ CREATE TABLE CheckedOutBooks (
     return_date DATE,
     PRIMARY KEY (person_id, book_id),
     FOREIGN KEY (person_id) REFERENCES People(person_id),
-    FOREIGN KEY (book_id) REFERENCES Books(book_id)
+    FOREIGN KEY (book_id) REFERENCES Book(book_id)
 );
