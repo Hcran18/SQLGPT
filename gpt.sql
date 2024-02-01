@@ -1,13 +1,13 @@
 CREATE TABLE Library (
     library_id INT PRIMARY KEY,
-    location VARCHAR(255) NOT NULL
+    location VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Book (
     book_id INT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    author VARCHAR(255) NOT NULL,
-    genre VARCHAR(255) NOT NULL
+    title VARCHAR(50) NOT NULL,
+    author VARCHAR(50) NOT NULL,
+    genre VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE LibraryBook (
@@ -21,8 +21,8 @@ CREATE TABLE LibraryBook (
 
 CREATE TABLE People (
     person_id INT PRIMARY KEY,
-    first_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255) NOT NULL
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE CheckedOutBooks (
