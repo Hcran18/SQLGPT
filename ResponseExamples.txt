@@ -1,0 +1,87 @@
+1.
+Fail
+Question:
+How many copies of books ar in the Main Branch Library?
+SQL Query from LLM:
+SELECT SUM(copies_available)
+FROM LibraryBook
+WHERE library_id = (SELECT library_id FROM Library WHERE location = 'Main Branch');
+Retrieved Data:
+SUM(copies_available): null
+Answer:
+The database does not provide the information on how many copies of books are in the Main Branch Library.
+
+2.
+Success
+Question:
+What library is the great gatsby located at?
+SQL Query from LLM:
+SELECT l.location
+FROM Library l
+JOIN LibraryBook lb ON l.library_id = lb.library_id
+JOIN Book b ON lb.book_id = b.book_id
+WHERE b.title = 'The Great Gatsby' AND lb.copies_available > 0
+Retrieved Data:
+location: Main Library
+Answer:
+The location where The Great Gatsby is available is the Main Library.
+
+3.
+Partial Fail
+Question:
+How long in days is to kill a mockingbird checked out for?
+SQL Query from LLM:
+SELECT DATEDIFF(return_date, checkout_date) AS checkout_duration
+FROM CheckedOutBooks
+WHERE book_id = (SELECT book_id FROM Book WHERE title = 'To Kill a Mockingbird');
+Retrieved Data:
+checkout_duration: 19
+Answer:
+To determine the duration in days that To Kill a Mockingbird is checked out for, we need to examine the CheckedOutBooks table.
+However, the data provided does not include the related checkout_date and return_date information for the specific book (To Kill a Mockingbird).
+Therefore, we cannot accurately determine the length of time for which To Kill a Mockingbird is checked out.
+
+4.
+Success
+Question:
+Can you list everyone who currently has a checked out book and the title of the book they have checked out?
+SQL Query from LLM:
+SELECT p.first_name, p.last_name, b.title
+FROM People p
+JOIN CheckedOutBooks c ON p.person_id = c.person_id
+JOIN Book b ON c.book_id = b.book_id
+Retrieved Data:
+first_name: John, last_name: Doe, title: The Great Gatsby, first_name: Jane, last_name: Smith, title: To Kill a Mockingbird, first_name: Bob, last_name: Johnson, title: 1984
+Answer:
+Currently Checked Out Books:\n\nJohn Doe - The Great Gatsby\nJane Smith - To Kill a Mockingbird\nBob Johnson - 1984
+
+5.
+Partial Fail
+Question:
+Can you list the books that have not been checked out and what library they belong to?
+SELECT B.title, L.location
+FROM Book B
+JOIN LibraryBook LB ON B.book_id = LB.book_id
+JOIN Library L ON LB.library_id = L.library_id
+WHERE B.book_id NOT IN (
+    SELECT COB.book_id
+    FROM CheckedOutBooks COB
+)
+Retrieved Data:
+title: The Catcher in the Rye, location: Branch Library B
+Answer:
+There are no books in the provided data that have not been checked out and their corresponding library.
+
+6.
+Partial fail
+Question:
+How many available copies of to kill a mocking bird are there?
+SQL Query from LLM:
+SELECT SUM(copies_available)
+FROM LibraryBook
+JOIN Book ON LibraryBook.book_id = Book.book_id
+WHERE Book.title = 'To Kill a Mockingbird';
+Retrieved Data:
+SUM(copies_available): 8
+Answer:
+There are 8 available copies of \
